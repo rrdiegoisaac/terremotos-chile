@@ -5,7 +5,7 @@
 El resultado es una nota interactiva, con gráficos y explicación de cada hallazgo, publicada en mi portafolio.
 
 - **Nota interactiva:** _(enlace al portafolio, próximamente)_
-- **Dataset en Kaggle:** _(próximamente)_
+- **Dataset en Kaggle:** [Chile Earthquakes 2000–2026 (CSN Catalog)](https://www.kaggle.com/datasets/diegoisaac1/chile-earthquakes-20002026-csn-catalog): el catálogo completo, sin filtros, en CSV y SQLite
 
 > Es un proyecto que vengo desarrollando desde 2024. La primera versión partió de un dataset público de Kaggle; esta la rehice desde cero, con los datos obtenidos directamente del CSN y un tratamiento explícito de sus limitaciones.
 
@@ -48,7 +48,7 @@ analisis/
 tests/                 Pruebas de las funciones principales (pytest)
 consultas.sql          Consultas de exploración con CTE y funciones de ventana
 data/
-  sismos.db            Base SQLite (no se incluye en el repo: se regenera con el scraper)
+  sismos.db            Base SQLite (no se incluye en el repo: se regenera con el scraper o se descarga de Kaggle)
   pb2002/              Límites de placas tectónicas (Bird, 2003)
   fronteras/           Países de Natural Earth (región de Chile)
 export/                Resultados resumidos (JSON) para los gráficos
@@ -74,6 +74,8 @@ python analisis/exportar.py                     # genera export/*.json
 pip install -r requirements-dev.txt
 python -m pytest                                # pruebas
 ```
+
+Para no esperar la descarga, también se puede bajar `sismos.db` desde el [dataset en Kaggle](https://www.kaggle.com/datasets/diegoisaac1/chile-earthquakes-20002026-csn-catalog) y copiarla en `data/`.
 
 El scraper acepta un rango de fechas (`--desde 2025-01-01 --hasta 2025-12-31`) y, si se interrumpe, al volver a ejecutarlo sigue desde el último día guardado. Para probar el análisis sin esperar la descarga completa, basta con bajar uno o dos años.
 
