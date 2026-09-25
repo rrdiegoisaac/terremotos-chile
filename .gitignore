@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# La base se regenera con el scraper; es pesada para GitHub (también estará en Kaggle)
+data/*.db
+data/*.db-journal
+
+# Registro de ejecución del scraper
+*.log
+.pytest_cache/
