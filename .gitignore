@@ -9,3 +9,6 @@ data/*.db-journal
 # Registro de ejecución del scraper
 *.log
 .pytest_cache/
+
+# Archivos generados para Kaggle (se regeneran con analisis/exportar_kaggle.py)
+kaggle/
